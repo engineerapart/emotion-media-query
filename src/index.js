@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from 'emotion';
 import { pxToEm, pxToRem } from './convertors';
 
 export {
@@ -23,7 +23,7 @@ function getSizeFromBreakpoint(breakpointValue, breakpoints = {}) {
   } else if (parseInt(breakpointValue)) {
     return breakpointValue;
   } else {
-    console.error('styled-media-query: No valid breakpoint or size specified for media.');
+    console.error('emotion-media-query: No valid breakpoint or size specified for media.');
     return '0';
   }
 }
@@ -59,7 +59,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
       const size = breakpoints[label];
 
       acc.to[label] = (...args) => {
-        console.warn(`styled-media-query: Use media.lessThan('${label}') instead of old media.to.${label} (Probably we'll deprecate it)`);
+        console.warn(`emotion-media-query: Use media.lessThan('${label}') instead of old media.to.${label} (Probably we'll deprecate it)`);
         return css`
           @media (max-width: ${size}) {
             ${css(...args)}
@@ -68,7 +68,7 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
       };
 
       acc.from[label] = (...args) => {
-        console.warn(`styled-media-query: Use media.greaterThan('${label}') instead of old media.from.${label} (Probably we'll deprecate it)`);
+        console.warn(`emotion-media-query: Use media.greaterThan('${label}') instead of old media.from.${label} (Probably we'll deprecate it)`);
         return css`
           @media (min-width: ${size}) {
             ${css(...args)}
@@ -98,6 +98,6 @@ export function generateMedia(breakpoints = defaultBreakpoints) {
 export default generateMedia();
 
 /**
- * Usage: styled.div` ${media.from.medium`background: #000;`} `;
+ * Usage: emotion.div` ${media.from.medium`background: #000;`} `;
  * With this code, background for small and medium sizes will be `default` and for more than medium, will be `#000`
  */

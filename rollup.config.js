@@ -2,7 +2,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify';
-import gzip from 'rollup-plugin-gzip';
 
 const prod = process.env.PRODUCTION;
 
@@ -23,9 +22,9 @@ if (prod) plugins.push(uglify());
 
 if (process.env.BROWSER) {
   config = Object.assign(config, {
-    dest: 'dist/styled-media-query.umd.js',
+    dest: 'dist/emotion-media-query.umd.js',
     format: 'umd',
-    moduleName: 'styled-media-query',
+    moduleName: 'emotion-media-query',
     sourceMap: true,
     exports: 'named',
     plugins,
@@ -38,7 +37,7 @@ if (process.env.BROWSER) {
       commonjs(),
       babel(),
     ],
-    dest: 'dist/styled-media-query.common.js',
+    dest: 'dist/emotion-media-query.common.js',
     format: 'cjs',
   })
 
@@ -49,7 +48,7 @@ if (process.env.BROWSER) {
       commonjs(),
       babel(),
     ],
-    dest: 'dist/styled-media-query.es.js',
+    dest: 'dist/emotion-media-query.es.js',
     format: 'es',
   })
 }

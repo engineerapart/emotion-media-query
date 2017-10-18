@@ -1,14 +1,11 @@
-# 💅💍 styled-media-query
-[![npm](https://img.shields.io/npm/v/styled-media-query.svg)]()
-[![npm](https://img.shields.io/npm/l/styled-media-query.svg)]()
-[![David](https://img.shields.io/david/morajabi/styled-media-query.svg)]()
+# 👩‍🎤💍 emotion-media-query
+[![npm](https://img.shields.io/npm/v/emotion-media-query.svg)]()
+[![npm](https://img.shields.io/npm/l/emotion-media-query.svg)]()
+[![David](https://img.shields.io/david/morajabi/emotion-media-query.svg)]()
 
-Beautiful media queries better than CSS @media for [styled-components](https://github.com/styled-components/styled-components) with ability to specify custom breakpoints.
+Beautiful media queries better than CSS @media for [emotion](https://github.com/emotion-js/emotion) with ability to specify custom breakpoints.
 
-**Don't forget to STAR 🎊 We are working so hard to add more features/customizations to `styled-media-query`!**
-
-**Note: This documentation is for the latest version (v2). We still support v1 syntax but it'll be removed in v3.**
-
+**Don't forget to STAR 🎊 We are working so hard to add more features/customizations to `emotion-media-query`!**
 
 Features:
 - Custom breakpoints
@@ -17,6 +14,7 @@ Features:
 - Familiar syntax as it uses Tagged Template Literals just like styled-components
 - Ability to convert `px` to `rem` or `em`
 
+> This is a fork of [styled-media-query](https://github.com/morajabi/styled-media-query) by Mohammad Rajabifard. All credit goes to him.
 # Start
 - [Installation](#-installation)
 - [Usage](#-usage) *- Get Started*
@@ -27,14 +25,14 @@ Features:
 # 🌱 Installation
 You can install it like every other library with awesome **yarn**:
 ```
-yarn add styled-media-query
+yarn add emotion-media-query
 ```
 or with **npm**
 ```
-npm install styled-media-query
+npm install emotion-media-query
 ```
 
-*Note: If you didn't install `styled-components` yet, install it as well `yarn add styled-components`*
+*Note: If you didn't install `emotion-components` yet, install it as well `yarn add emotion-components`*
 
 **If you use UglifyJS and it fails or you need compiled module, update to latest version please!**
 
@@ -58,8 +56,8 @@ The `media` has 3 main methods to generate media queries:
 ## Basic Example
 Probably this example will explain most of this library. You can use one of these methods to write different kinds of media queries like this:
 ```js
-import styled from 'styled-components'; // You need this as well
-import media from 'styled-media-query';
+import styled from 'emotion-react'; // You need this as well
+import media from 'emotion-media-query';
 
 const Box = styled.div`
   background: black;
@@ -162,8 +160,8 @@ media.between('450px', '768px')`
 ## Use with custom breakpoints:
 Our breakpoints may not fit your app, so we export another function called `generateMedia` to generate a `media` object with your own custom breakpoints:
 ```javascript
-import styled from 'styled-components'; // You need this as well
-import { generateMedia } from 'styled-media-query';
+import styled from 'emotion-react'; // You need this as well
+import { generateMedia } from 'emotion-media-query';
 
 const customMedia = generateMedia({
   desktop: '78em',
@@ -184,17 +182,17 @@ const Box = styled.div`
 
 In the case you needed the default breakpoints object, you can import it as follow:
 ```javascript
-import { defaultBreakpoints } from 'styled-media-query';
+import { defaultBreakpoints } from 'emotion-media-query';
 ```
 
 ## 🐽 Concepts
 There's a little to learn before you can read the API section.
 
 ### Breakpoints Object
-It's an object containing each break point name as keys and the screen width as values. `styled-media-query` exports the `defaultBreakpoints` object.
+It's an object containing each break point name as keys and the screen width as values. `emotion-media-query` exports the `defaultBreakpoints` object.
 
 ### Media Generator Object
-A `media generator object` is what is returned from [`generateMedia`](#generateMedia) function or the [default exported object](#default-media) from `styled-media-query`. Read API section for each method.
+A `media generator object` is what is returned from [`generateMedia`](#generateMedia) function or the [default exported object](#default-media) from `emotion-media-query`. Read API section for each method.
 
 ## 🌼 API
 We have a very minimal API, probably you are familiar with 90% of it so far.
@@ -204,7 +202,7 @@ A [`media generator object`](#media-generator-object) with default [`breakpoints
 
 *Example:*
 ```javascript
-import media from 'styled-media-query';
+import media from 'emotion-media-query';
 ```
 
 
@@ -218,7 +216,7 @@ generateMedia([breakpoints]);
 
 *Example:*
 ```javascript
-import { generateMedia } from 'styled-media-query';
+import { generateMedia } from 'emotion-media-query';
 
 const media = generateMedia({
   xs: '250px',
@@ -238,7 +236,7 @@ Converts [`breakpoints object`](#breakpoints-object)'s units from `px` to `rem` 
 
 *Example:*
 ```javascript
-import { pxToRem } from 'styled-media-query';
+import { pxToRem } from 'emotion-media-query';
 
 const breakpointsInRem = pxToRem({
   small: '250px',
@@ -270,16 +268,13 @@ Similar to [`pxToRem`](#pxToRem).
 ## ⚙️ Troubleshoot
 If you use UglifyJS and it fails or you need compiled module you need to update your module to v2 right now to fix the issue:
 ```
-npm install styled-media-query@latest
+npm install emotion-media-query@latest
 ```
 
 ## 🐿 Contributions
 I'd love to contribute in open source projects, and love to see people contribute. So **any kind** of contributions (bug reports, suggestions, PRs, issues, etc) are super welcome.
 
 ## 🍿 TODO
-- [x] Add convertors for `em` and `rem` to `px` and vice-versa.
-- [x] Add `between()` method
-- [x] Add LICENSE
 - [ ] Write tests with Jest
 - [ ] Ability to specify custom media attributes
 - [ ] Add support for [glamorous](https://github.com/paypal/glamorous)
@@ -288,5 +283,5 @@ I'd love to contribute in open source projects, and love to see people contribut
 # License
 Licensed under the MIT License, Copyright © 2017 [Mohammad Rajabifard](https://github.com/morajabi).
 
-See [LICENSE](https://github.com/morajabi/styled-media-query/blob/master/LICENSE) for more information.
+See [LICENSE](https://github.com/morajabi/emotion-media-query/blob/master/LICENSE) for more information.
 

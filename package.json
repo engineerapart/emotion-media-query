@@ -1,13 +1,13 @@
 {
-  "name": "styled-media-query",
-  "version": "2.0.0",
-  "description": "Beautiful media queries for styled-component",
-  "main": "dist/styled-media-query.common.js",
-  "module": "dist/styled-media-query.es.js",
-  "jsnext:main": "dist/styled-media-query.es.js",
-  "repository": "git@github.com:morajabi/styled-media-query.git",
+  "name": "emotion-media-query",
+  "version": "1.0.0",
+  "description": "Beautiful media queries for emotion",
+  "main": "dist/emotion-media-query.common.js",
+  "module": "dist/emotion-media-query.es.js",
+  "jsnext:main": "dist/emotion-media-query.es.js",
+  "repository": "git@github.com:mrmartineau/emotion-media-query.git",
   "keywords": [
-    "styled-components",
+    "emotion",
     "media-query",
     "media",
     "breakpoint"
@@ -23,19 +23,18 @@
     "dist",
     "src"
   ],
-  "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
+  "author": "Zander Martineau",
   "license": "MIT",
   "dependencies": {
-    "styled-components": "2.x.x"
+    "emotion": "^8.0.8"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
     "rimraf": "^2.6.1",
     "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-uglify": "^2.0.1",
     "rollup-plugin-commonjs": "^8.2.0",
-    "rollup-plugin-gzip": "^1.3.0",
-    "rollup-plugin-node-resolve": "^3.0.0"
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1"
   }
 }
