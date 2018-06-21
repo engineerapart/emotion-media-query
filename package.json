@@ -1,6 +1,6 @@
 {
   "name": "@engineerapart/emotion-media-query",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Beautiful media queries for emotion",
   "main": "dist/emotion-media-query.cjs.js",
   "module": "dist/emotion-media-query.es.js",

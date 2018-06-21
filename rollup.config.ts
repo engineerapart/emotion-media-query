@@ -25,9 +25,9 @@ const plugins = [
 export default {
   input: `src/index.ts`,
   output: [
-    // { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true, exports: 'named' },
-    { file: pkg.main, format: 'cjs', sourcemap: true, exports: 'named' },
-    { file: pkg.module, format: 'es', sourcemap: true, exports: 'named' }
+    // { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true },
+    { file: pkg.main, format: 'cjs', sourcemap: true },
+    { file: pkg.module, format: 'es', sourcemap: true }
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external: ['react', 'emotion'],
