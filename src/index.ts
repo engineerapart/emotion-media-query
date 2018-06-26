@@ -17,11 +17,15 @@ export const defaultBreakpoints = {
   small: '450px',
 };
 
-function getSizeFromBreakpoint(breakpointValue: string | number, breakpoints: { [key: string]: string | number } = {}) {
-  if (breakpoints[breakpointValue]) {
-    return breakpoints[breakpointValue];
-  } else if (parseInt(breakpointValue as string, 10)) {
-    return breakpointValue;
+function getSizeFromBreakpoint(breakpointName: string | number, breakpoints: { [key: string]: string | number } = {}) {
+  if (breakpoints[breakpointName]) {
+    const val = breakpoints[breakpointName];
+    if (typeof val === 'number') {
+      return `${val}px`;
+    }
+    return val;
+  } else if (parseInt(breakpointName as string, 10)) {
+    return breakpointName;
   } else {
     console.error('emotion-media-query: No valid breakpoint or size specified for media.');
     return '0';
@@ -33,7 +37,7 @@ function getSizeFromBreakpoint(breakpointValue: string | number, breakpoints: { 
  * @param {Object} [defaultBreakpoints] breakpoints - Map labels to breakpoint sizes
  * @return {Object} - Media generators for each breakpoint
  */
-export function generateMedia(breakpoints = defaultBreakpoints) {
+export function generateMedia(breakpoints: { [key: string]: string | number } = defaultBreakpoints) {
   const lessThan = (breakpoint: string) => (...args: Interpolation[]) => css`
     @media (max-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
       ${css(...args)}
